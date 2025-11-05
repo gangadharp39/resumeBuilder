@@ -14,8 +14,8 @@ const Home = () => {
       <Hero />
       <Features />
       <Testimonial />
-      <TeamSection />
       <CallToAction />
+      <TeamSection />
       <Footer />
     </div>
   )

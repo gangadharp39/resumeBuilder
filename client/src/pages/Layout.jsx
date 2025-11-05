@@ -7,11 +7,12 @@ import Login from '../pages/Login'
 
 const Layout = () => {
 
-  const {user, loading} = useSelector
+  const {user, loading} = useSelector(state => state.auth)
 
   if (loading) {
     return <Loader />
   }
+  
   return (
     <div>
       {

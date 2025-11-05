@@ -3,7 +3,7 @@ import React from "react";
 
 const TeamSection = () => {
   return (
-    <div class="flex flex-col items-center justify-center text-center py-20">
+    <div id="contact" class="flex flex-col items-center justify-center text-center mt-20">
       <h3 class="text-lg font-medium text-blue-600 mb-2">Contact Us</h3>
       <h1 class="text-3xl md:text-4xl font-semibold mb-4 text-gray-800">
         Meet Our Team
@@ -27,8 +27,8 @@ const TeamSection = () => {
             I am always eager to take on new challenges.
           </p>
           <div class="flex items-center space-x-4 mt-6 text-gray-500 group-hover:text-white">
-            <a href="https://www.instagram.com/santhosh__reddy__5">
-              <Instagram size={20}/>
+            <a href="mailto:santhoshreddy561@gmail.com">
+              <Mail size={20}/>
             </a>
             <a href="https://www.linkedin.com/in/santhosh-reddy-6a977a2ba">
               <Linkedin size={20}/>

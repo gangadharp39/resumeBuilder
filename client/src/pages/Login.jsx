@@ -1,27 +1,41 @@
 import { Lock, Mail, User2Icon } from "lucide-react";
 import React from "react";
+import api from "../configs/api";
+import { useDispatch } from "react-redux";
+import { login } from "../app/features/authSlice";
+import toast from "react-hot-toast";
+import api from '../configs/api'
 
 const Login = () => {
 
-    const query = new URLSearchParams(window.location.search)
-    const urlState = query.get('state')
+  const dispatch = useDispatch()
+  const query = new URLSearchParams(window.location.search)
+  const urlState = query.get('state')
 
-    const [state, setState] = React.useState(urlState || "login")
+  const [state, setState] = React.useState(urlState || "login")
 
-    const [formData, setFormData] = React.useState({
-        name: '',
-        email: '',
-        password: ''
-    })
+  const [formData, setFormData] = React.useState({
+    name: '',
+    email: '',
+    password: ''
+  })
 
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+      try {
+        const { data } =await api.post(`/api/users/${state}`, formData) 
+        dispatch(login(data))
+        localStorage.setItem('token', data.token)
+        toast.success(data.message)
+      }catch (error) {
+        toast(error?.response?.data?.message || ErrorEvent.message)
+      }
+  }
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData(prev => ({ ...prev, [name]: value }))
-    }
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">

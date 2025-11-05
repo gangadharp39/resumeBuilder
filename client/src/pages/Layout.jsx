@@ -3,7 +3,7 @@ import { Outlet } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import {useSelector} from 'react-redux'
 import Loader from '../components/Loader'
-import Login from '../components/'
+import Login from '../pages/Login'
 
 const Layout = () => {
 

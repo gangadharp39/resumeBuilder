@@ -1,0 +1,46 @@
+# Node modules
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# Environment files
+.env
+client/.env
+server/.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# OS / Editor files
+.DS_Store
+Thumbs.db
+
+# Build / dist files
+dist/
+build/
+client/build/
+server/build/
+
+# Cache
+.cache/
+.next/
+out/
+
+# Coverage / Testing
+coverage/
+*.lcov
+
+# VSCode
+.vscode/
+.idea/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Local environment overrides
+*.local

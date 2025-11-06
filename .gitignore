@@ -20,7 +20,6 @@ lerna-debug.log*
 Thumbs.db
 
 # Build / dist files
-dist/
 build/
 client/build/
 server/build/
